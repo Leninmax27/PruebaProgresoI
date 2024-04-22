@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PruebaProgresoI.Models.Carrera>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCarrera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.campus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nsemestres)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCarrera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.campus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nsemestres)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CarreraID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CarreraID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CarreraID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
