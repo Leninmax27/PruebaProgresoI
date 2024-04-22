@@ -11,7 +11,8 @@ namespace PruebaProgresoI.Models
         [Required(ErrorMessage = "El campus es obligatorio.")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "El nombre del campus debe tener entre 3 y 50 caracteres.")]
         public string campus {  get; set; }
-
+        [Required(ErrorMessage = "El número de semestres es obligatorio.")]
+        [Range(1, 12, ErrorMessage = "El número de semestres debe estar entre 1 y 12.")]
         public int Nsemestres { get; set; }
     }
 }
